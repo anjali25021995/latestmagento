@@ -1,0 +1,41 @@
+//Queries
+type Query {
+     brandpage(storeview : Int): [brandpageData] 
+     @resolver(class: "Petsdelight\\Longproducts\\Model\\Resolver\\BrandFetchingdata")
+}
+
+
+type Mutation {
+    Brandvalues(input: AddbrandInput!): AddbrandOutput @resolver(class: "\\Petsdelight\\Longproducts\\Model\\Resolver\\Brandproductsdata") @doc(description:"Request a new Rma")
+}
+
+
+
+type brandpageData {
+    product_id : String
+    value : String
+    label : String
+}
+
+
+
+input AddbrandInput {
+    Brand: String @doc(description: "The Brand Data"),
+    exportfields:[exportval!]!
+}
+
+input exportval {
+    Sku: String
+    Name: String
+    Barcode: String
+    Variant: String
+    Wholesaleprice: String
+    Retailprice: String
+    Description: String
+    Imgurl: String 
+}
+
+type AddbrandOutput {
+   success_message: String
+}
+

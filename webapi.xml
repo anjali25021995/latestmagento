@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+     <route url="/V1/product-brandsfetch/" method="GET">
+        <service class="Petsdelight\Longproducts\Api\GetbrandInterface" method="getbrandproduct"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route> 
+   <!--   <route url="/V1/product_values/:brdval/:prodname/:proddesc" method="POST">
+        <service class="Petsdelight\Longproducts\Api\PostproductInterface" method="getpostproduct"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route> -->
+    
+</routes>
